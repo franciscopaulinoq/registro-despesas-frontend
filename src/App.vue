@@ -1,34 +1,55 @@
 <template>
-  <nav>
-    <router-link to="/">Lista de Despesas</router-link> |
-    <router-link to="/create">Nova Despesa</router-link>
-  </nav>
-  <router-view />
+  <div class="app-container">
+    <nav class="navbar">
+      <h1 class="navbar-title">Registro de Despesas</h1>
+      <div class="navbar-links">
+        <router-link to="/">Listagem</router-link>
+        <router-link to="/create">Nova Despesa</router-link>
+      </div>
+    </nav>
+    <router-view />
+  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+.app-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: var(--space-md);
 }
 
-nav {
-  padding: 20px 0;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
   text-decoration: none;
-  margin-right: 10px;
+  color: #333;
+  padding: 5px 0;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar-links a.router-link-exact-active {
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>
